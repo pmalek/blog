@@ -13,6 +13,10 @@ params:
       name: "@pmalek"
   footer:
     author: true
+  section:
+    dateFormat: "2006-01-02"
+  search:
+    enable: false
   seo:
     image: "/images/profile.jpg"
   social:
