@@ -3,6 +3,9 @@
   "enabledManagers": [
     "custom.regex"
   ],
+  "extends": [
+    "config:best-practices"
+  ],
   "automerge": true,
   "separateMinorPatch": true,
   "labels": [
