@@ -1,24 +1,49 @@
-baseURL: https://example.org/
+baseURL: https://blog.pmalek.dev/
+title: Random thoughts
+description: Random thoughts by @pmalek
 languageCode: en-us
-title: My New Hugo Site
+languageName: English
 theme: keepit
 capitalizeListTitles: false
 
+# menu:
+#   main:
+#     - weight: 1
+#       identifier: "posts"
+#       # you can add extra information before the name (HTML format is supported), such as icons
+#       pre: ""
+#       # you can add extra information after the name (HTML format is supported), such as icons
+#       post: ""
+#       name: "Posts"
+#       url: "/posts/"
+#       # title will be shown when you hover on this menu link
+#       title: ""
+
 params:
-  title: "@pmalek"
-  description: "pmalek blog"
   defaultTheme: light
   header:
     title:
-      name: "@pmalek"
+      name: Random thoughts by @pmalek
+      # logo: https://avatars.githubusercontent.com/u/739996
+  home:
+    profile:
+      gravatarEmail: ""
+      avatarURL: https://avatars.githubusercontent.com/u/739996
+      typeit: false
+      subtitle: Random thoughts by @pmalek
   footer:
-    author: true
+    author: false
+    # copyright: false
+    since: 2024
+  page:
+    share:
+      enable: false
   section:
     dateFormat: "2006-01-02"
   search:
     enable: false
   seo:
-    image: "/images/profile.jpg"
+    image: "assets/me.png"
   social:
     GitHub: "pmalek"
     Linkedin: ""
@@ -94,3 +119,7 @@ markup:
     guessSyntax: true
     lineNos: true
     lineNumbersInTable: true
+
+module:
+  hugoVersion:
+    min: "0.139.3"
