@@ -43,11 +43,14 @@ hugo: mise
 # ------------------------------------------------------------------------------
 
 BASE_URL ?= blog.pmalek.dev
+HUGO_FLAGS ?= 
 
 .PHONY: run
 run: hugo
-	$(HUGO) server --buildDrafts --disableFastRender
+	$(HUGO) server $(HUGO_FLAGS) \
+		--buildDrafts --disableFastRender
 
 .PHONY: build
 build: hugo
-	$(HUGO) build --minify --gc --baseURL=$(BASE_URL)
+	$(HUGO) build $(HUGO_FLAGS) \
+		--minify --gc --baseURL=$(BASE_URL)
