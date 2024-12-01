@@ -45,7 +45,7 @@ params:
         repoId: R_kgDONXBzYA
         category: Announcements
         categoryId: DIC_kwDONXBzYM4Ckxmn
-        mapping: pathname
+        mapping: og:title
         reactions: true
         strict: false
         emitMetadata: false
