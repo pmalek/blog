@@ -19,6 +19,7 @@ capitalizeListTitles: false
 #       # title will be shown when you hover on this menu link
 #       title: ""
 
+
 params:
   defaultTheme: light
   header:
@@ -36,6 +37,22 @@ params:
     # copyright: false
     since: 2024
   page:
+    comment:
+      enable: true
+      giscus:
+        enable: true
+        repo: pmalek/blog
+        repoId: R_kgDONXBzYA
+        category: Announcements
+        categoryId: DIC_kwDONXBzYM4Ckxmn
+        mapping: pathname
+        reactions: true
+        strict: false
+        emitMetadata: false
+        lazy: true
+        inputPosition: top
+        theme: light
+        lang: en
     share:
       enable: false
   section:
