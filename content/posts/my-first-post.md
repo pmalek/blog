@@ -2,9 +2,11 @@
 date: 2024-11-29
 title: My First Post 👋
 description: Let's discuss generics in Golang shall we
+# summary: axd
 
 tags:
 - go
+- programming
 
 categories:
 - Golang

@@ -1,8 +1,9 @@
 ---
 date: 2024-11-29
 title: My Second Post
+description: Let's discuss some other stuff
 
-draft: true
+draft: false
 
 tags:
 - go

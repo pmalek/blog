@@ -19,14 +19,20 @@ capitalizeListTitles: false
 #       # title will be shown when you hover on this menu link
 #       title: ""
 
-
 params:
+  analytics:
+    enable: true
+    google:
+      id: G-PQC312FV1C
   defaultTheme: light
   header:
     title:
       name: Random thoughts by @pmalek
       # logo: https://avatars.githubusercontent.com/u/739996
   home:
+    posts:
+      enable: true
+      summary: false
     profile:
       gravatarEmail: ""
       avatarURL: https://avatars.githubusercontent.com/u/739996
