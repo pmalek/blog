@@ -11,7 +11,7 @@
   "labels": [
     "dependencies"
   ],
-  "schedule": ["7 * * * *"],
+  "schedule": ["* 7-17 * * *"],
   "customManagers": [
     {
       "description": "Match dependencies in .tools_verisons.yaml that are properly annotated with `# renovate: datasource={} depName={}.`",
