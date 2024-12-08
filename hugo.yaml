@@ -1,6 +1,6 @@
 baseURL: https://blog.pmalek.dev/
 title: Random thoughts
-description: Random thoughts by @pmalek
+description: Dev thoughts
 languageCode: en-us
 languageName: English
 theme: keepit
@@ -27,7 +27,7 @@ params:
   defaultTheme: light
   header:
     title:
-      name: Random thoughts by @pmalek
+      name: Dev thoughts
       # logo: https://avatars.githubusercontent.com/u/739996
   home:
     posts:
