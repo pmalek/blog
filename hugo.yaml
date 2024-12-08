@@ -37,7 +37,8 @@ params:
       gravatarEmail: ""
       avatarURL: https://avatars.githubusercontent.com/u/739996
       typeit: false
-      subtitle: Random thoughts by @pmalek
+      # TODO: Add home page description
+      subtitle: ""
   footer:
     author: false
     # copyright: false
