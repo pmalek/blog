@@ -1,5 +1,5 @@
 ---
-date: 2024-12-08
+date: 2024-12-08 20:40:00 +0100
 title: The hidden gem in Bitwarden's Secret manager - `bws run`
 description: In this post we'll discuss how `bws run` can be used to run commands with projects scoped set of secrets via Bitwarden's Secret manager
 

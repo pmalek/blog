@@ -1,5 +1,5 @@
 baseURL: https://blog.pmalek.dev/
-title: Random thoughts
+title: Dev thoughts by @pmalek
 description: Dev thoughts
 languageCode: en-us
 languageName: English
@@ -20,12 +20,16 @@ capitalizeListTitles: false
 #       title: ""
 
 params:
+  app:
+    # optional site title override for the app when added to an iOS home screen or Android launcher
+    title: Dev thoughts
   analytics:
     enable: true
     google:
       id: G-PQC312FV1C
   defaultTheme: light
-  description: Dev thoughts by @pmalek
+  # website description for RSS, SEO, Open Graph and Twitter Cards
+  description: Developer thoughts about everything related to software development, programming, and technology.
   header:
     title:
       name: Dev thoughts
@@ -39,12 +43,14 @@ params:
       avatarURL: https://avatars.githubusercontent.com/u/739996
       typeit: false
       # TODO: Add home page description
+      # subtitle shown in home page
       subtitle: ""
   footer:
     author: false
     # copyright: false
     since: 2024
   page:
+    author: Patryk Małek
     code:
       # NOTE: This is incorrectly counted probably due to \n characters in the code block.
       # ref: https://discourse.gohugo.io/t/making-code-blocks-expand-by-default-in-hugo-loveit/34400
@@ -137,7 +143,7 @@ params:
     Matrix: ""
     Bilibili: ""
     Email: ""
-    RSS: ""
+    RSS: "index.xml"
 
 markup:
   # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
