@@ -19,6 +19,8 @@ capitalizeListTitles: false
 #       # title will be shown when you hover on this menu link
 #       title: ""
 
+summaryLength: 100
+
 params:
   app:
     # optional site title override for the app when added to an iOS home screen or Android launcher
@@ -51,6 +53,7 @@ params:
     since: 2024
   page:
     author: Patryk Małek
+    rssFullText: false
     code:
       # NOTE: This is incorrectly counted probably due to \n characters in the code block.
       # ref: https://discourse.gohugo.io/t/making-code-blocks-expand-by-default-in-hugo-loveit/34400

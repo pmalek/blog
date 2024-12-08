@@ -12,7 +12,7 @@ categories:
 
 ---
 
-Password and secret managers are ubiquitous these days and I feel like every one uses them these days (right?).
+Password and secret managers are ubiquitous these days and I feel like every one uses them these days (right? right?).
 Which is good, because they help us keep our secrets safe and secure.
 
 I've been using [Bitwarden Password manager][bitwarden_password_manager] personally
