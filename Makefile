@@ -29,21 +29,22 @@ mise-plugin-install: mise
 
 .PHONY: mise-install
 mise-install: mise
-	@$(MISE) install -q $(DEP_VER)
+	$(MISE) install -q $(DEP_VER)
 
-HUGO_VERSION = $(shell yq -ojson -r '.hugo' < $(TOOLS_VERSIONS_FILE))
-HUGO = $(PROJECT_DIR)/bin/installs/hugo/$(HUGO_VERSION)/bin/hugo
+# NOTE: https://github.com/nklmilojevic/asdf-hugo
+HUGO_VERSION = extended_$(shell yq -ojson -r '.hugo' < $(TOOLS_VERSIONS_FILE))
+HUGO = $(PROJECT_DIR)/bin/installs/asdf-hugo/$(HUGO_VERSION)/bin/hugo
 .PHONY: hugo
 hugo: mise
 	@$(MAKE) mise-plugin-install DEP=hugo
-	$(MAKE) mise-install DEP_VER=hugo@$(HUGO_VERSION)
+	$(MAKE) mise-install DEP_VER=asdf:hugo@$(HUGO_VERSION)
 
 # ------------------------------------------------------------------------------
 # Configuration - Build
 # ------------------------------------------------------------------------------
 
 BASE_URL ?= blog.pmalek.dev
-HUGO_FLAGS ?= 
+HUGO_FLAGS ?= --ignoreCache --gc
 
 .PHONY: run
 run: hugo
