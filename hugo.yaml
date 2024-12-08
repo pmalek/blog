@@ -142,7 +142,7 @@ markup:
   # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
   highlight:
     # false is a necessary configuration (https://github.com/Fastbyte01/KeepIt/issues/158)
-    noClasses: true
+    noClasses: false
     codeFences: true
     guessSyntax: true
     lineNos: true
