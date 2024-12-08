@@ -25,6 +25,7 @@ params:
     google:
       id: G-PQC312FV1C
   defaultTheme: light
+  description: Dev thoughts by @pmalek
   header:
     title:
       name: Dev thoughts
