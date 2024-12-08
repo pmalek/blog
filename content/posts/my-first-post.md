@@ -17,45 +17,45 @@ categories:
 
 To showcase this, I wrote a quick Benchmark:
 
-```go
-package across_versions
+```go { title = "hello.go" }
+import (
+	"context"
+	"fmt"
+	"log"
+	"os"
 
-func BenchmarkEncode(b *testing.B) {
-  // ...
+	"github.com/cloudflare/cloudflare-go"
+)
+
+func GetEnv(name string) string {
+	env := os.Getenv(name)
+	if env == "" {
+		log.Fatalf("Missing %s environment variable", name)
+	}
+	return env
 }
 
-```
+func main() {
+	ctx := context.Background()
 
-To showcase this, I wrote a quick Benchmark:
+	api, err := cloudflare.NewWithAPIToken(GetEnv("CF_API_TOKEN"))
+	if err != nil {
+		log.Fatal(err)
+	}
 
-```go
-package across_versions
+	zoneID := GetEnv("CF_ZONE_ID")
+	token, err := CreateToken(ctx, api, zoneID)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-func BenchmarkEncode(b *testing.B) {
-  // ...  }
+	apiZone, err := cloudflare.NewWithAPIToken(token.Value)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-```
-
-To showcase this, I wrote a quick Benchmark:
-
-```go
-package across_versions
-
-func BenchmarkEncode(b *testing.B) {
-  // ...
+	// ...
 }
-
-```
-
-To showcase this, I wrote a quick Benchmark:
-
-```go
-package across_versions
-
-func BenchmarkEncode(b *testing.B) {
-  // ...
-}
-
 ```
 
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
