@@ -1,4 +1,4 @@
-[![Pages deploy](https://github.com/pmalek/blog/actions/workflows/publish.yaml/badge.svg)](gh_publish)
+[![Pages deploy](https://github.com/pmalek/blog/actions/workflows/publish.yaml/badge.svg)][gh_publish]
 
 # blog
 
