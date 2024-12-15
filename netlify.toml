@@ -3,7 +3,7 @@
 # these settings.
 [context.production]
   publish = "public/"
-  command = "make build"
+  command = "hugo build --ignoreCache --minify --gc"
 
 [build.environment]
   BASE_URL = ""
@@ -12,4 +12,4 @@
 # a pull/merge request will inherit these settings.
 [context.deploy-preview]
   publish = "public/"
-  command = "make build"
+  command = "hugo build --ignoreCache --minify --gc"

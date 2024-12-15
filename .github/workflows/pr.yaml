@@ -45,6 +45,8 @@ jobs:
           install: false
 
       - name: Build with Hugo
+        env:
+          BASE_URL: ""
         run: make build
 
       - uses: bitwarden/sm-action@v2
