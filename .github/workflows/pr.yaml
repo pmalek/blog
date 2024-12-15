@@ -18,6 +18,11 @@ jobs:
   build:
     permissions:
       contents: read
+      # Needed by Netlify to add a comment to the PR
+      issues: write
+      pull-requests: write
+      deployments: write
+      statuses: write
     runs-on: ubuntu-latest
     steps:
       - name: Set Hugo cache directory
@@ -41,3 +46,29 @@ jobs:
 
       - name: Build with Hugo
         run: make build
+
+      - uses: bitwarden/sm-action@v2
+        with:
+          access_token: ${{ secrets.BW_ACCESS_TOKEN }}
+          identity_url: https://identity.bitwarden.eu
+          api_url: https://api.bitwarden.eu
+          secrets: |
+            c13526c8-8345-4d33-b60a-b2470153f2e8 > NETLIFY_AUTH_TOKEN 
+            331ea4ce-da95-4917-b37e-b24701564694 > NETLIFY_SITE_ID
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: './public'
+          production-branch: main
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions: PR ${{ github.event.pull_request.number }} - ${{ github.event.pull_request.title }}"
+          enable-pull-request-comment: true
+          overwrites-pull-request-comment: true
+          enable-commit-comment: false
+          fails-without-credentials: true
+          alias: ${{ github.event.pull_request.number }}
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ env.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ env.NETLIFY_SITE_ID }}
+        timeout-minutes: 1
