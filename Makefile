@@ -31,8 +31,16 @@ mise-plugin-install: mise
 mise-install: mise
 	$(MISE) install -q $(DEP_VER)
 
+YQ_VERSION = $(shell yq -ojson -r '.yq' < $(TOOLS_VERSIONS_FILE))
+YQ = $(PROJECT_DIR)/bin/installs/yq/$(YQ_VERSION)/bin/yq
+.PHONY: yq
+yq: mise
+	@$(MAKE) mise-plugin-install DEP=yq
+	$(MAKE) mise-install DEP_VER=yq@$(YQ_VERSION)
+	echo $(YQ)
+
 # NOTE: https://github.com/nklmilojevic/asdf-hugo
-HUGO_VERSION = extended_$(shell yq -ojson -r '.hugo' < $(TOOLS_VERSIONS_FILE))
+HUGO_VERSION = extended_$(shell $(YQ) -ojson -r '.hugo' < $(TOOLS_VERSIONS_FILE))
 HUGO = $(PROJECT_DIR)/bin/installs/asdf-hugo/$(HUGO_VERSION)/bin/hugo
 .PHONY: hugo
 hugo: mise
