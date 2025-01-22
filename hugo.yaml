@@ -166,6 +166,11 @@ markup:
     startLevel: 1
     endLevel: 3
     ordered: false
+  goldmark:
+    renderer:
+      # hardWraps: false
+      unsafe: true
+      # xhtml: false
 
 module:
   hugoVersion:
