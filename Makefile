@@ -32,7 +32,7 @@ mise-install: mise
 	$(MISE) install -q $(DEP_VER)
 
 # renovate: datasource=github-releases depName=mikefarah/yq
-YQ_VERSION = "4.45.1"
+YQ_VERSION = "4.45.2"
 YQ = $(PROJECT_DIR)/bin/installs/yq/$(YQ_VERSION)/bin/yq
 .PHONY: yq
 yq: mise
