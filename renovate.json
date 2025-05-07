@@ -11,14 +11,16 @@
   "labels": [
     "dependencies"
   ],
-  "schedule": ["* 7-17 * * *"],
+  "schedule": [
+    "* 7-17 * * *"
+  ],
   "customManagers": [
     {
       "description": "Match dependencies in .tools_verisons.yaml and Makefile that are properly annotated with `# renovate: datasource={} depName={}.`",
       "customType": "regex",
-      "fileMatch": [
-        "\\.tools_versions\\.yaml$",
-        "^Makefile$"
+      "managerFilePatterns": [
+        "/\\.tools_versions\\.yaml$/",
+        "/^Makefile$/"
       ],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\n.+\"(?<currentValue>.*?)\""
