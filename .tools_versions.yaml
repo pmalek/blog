@@ -1,2 +1,2 @@
 # renovate: datasource=github-releases depName=gohugoio/hugo
-hugo: "0.147.4"
+hugo: "0.147.5"
